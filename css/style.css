@@ -1,3 +1,4 @@
+/* General styling */
 body, html {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -7,13 +8,20 @@ body, html {
     
 }
 
+/* Logo & brand navigation styling*/
 .main-header {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    background-color: #fcf3e3;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(252, 243, 227, 0.8);
     padding: 20px 40px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
 }
 
 .left-header {
@@ -86,14 +94,124 @@ nav a:hover {
     text-decoration: none;
 }
 
-
-.banner-image{
-    border: 1px solid;
-    height: 450px;
+/* Home page styling */
+.home-page {
+    position: relative;
+    text-align: center;
+    height: 100vh; 
+    overflow: hidden; 
 }
 
-.content{
-    height: 500px;
+.banner-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto; 
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+.slider {
+    display: flex;
+    width: 100%; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    flex-shrink: 0;
+}
+
+/* Center the text block */
+.welcome-text {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 2; 
+    text-align: center;
+}
+
+/* Styling for "Hi User" */
+.hi-user {
+    font-size: 2.5rem; /* Slightly larger for emphasis */
+    color: #f3a29b; /* Softer, warmer color */
+    background-color: rgba(255, 223, 186, 0.9); /* Subtle background */
+    padding: 15px 30px; /* Bigger padding for more spacious feel */
+    border: 2px solid #f4a258; /* Border for a defined box */
+    border-radius: 12px; /* Smooth rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    font-weight: 600; /* Slightly bolder text */
+    letter-spacing: 1px; /* Increase letter spacing for readability */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for "Hi User" */
+.hi-user:hover {
+    background-color: #f4a258; /* Change background color on hover */
+    color: #fff; /* White text color on hover */
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+/* Styling for "Welcome to our website" */
+.welcome-message {
+    font-size: 2.25rem; /* Same size as "Hi User" */
+    color: #013d5a; /* Darker blue for readability */
+    background-color: rgba(173, 216, 230, 0.8); /* Subtle light blue background */
+    padding: 12px 25px; /* Adjusted padding for symmetry */
+    border: 2px solid #90b7c8; /* Soft border color */
+    border-radius: 12px; /* Smooth rounded corners */
+    margin-top: 15px; /* Space between the two elements */
+    display: inline-block;
+    font-weight: 500; /* Medium weight text */
+    letter-spacing: 0.8px; /* Slightly increased letter spacing */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for "Welcome" */
+.welcome-message:hover {
+    background-color: #90b7c8; /* Light blue hover effect */
+    color: #fff; /* White text on hover */
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
+}
+
+/* Wave container styling */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; 
+}
+
+.wave-container svg {
+    width: 100%;
+    height: auto; 
+    transform: scale(1.1); 
+}
+
+/* Our-profile styling */
+.our-profile .content {
+    padding: 30px;
+    background-color: #dd5c36;
+}
+
+.portfolio .content {
+    padding: 25px;
+    background-color: #333;
+    color: #fff;
+}
+
+.message-us .content {
+    padding: 20px;
+    background-color: #f1f1f1;
 }
 
 footer{

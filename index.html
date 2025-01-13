@@ -41,58 +41,126 @@
     <nav>
         <a href="#home-page"><i class="fas fa-home"></i> Home</a>
         <a href="#our-profile"><i class="fas fa-users"></i> Our Profile</a>
-        <a href="#portofolio"><i class="fas fa-briefcase"></i> Portfolio</a>
+        <a href="#portofolio"><i class="fas fa-briefcase"></i> Portofolio</a>
         <a href="#message-us"><i class="fas fa-envelope"></i> Message Us</a>
     </nav>
 </header>
 
-        
+    <!--Main Content-->
+    <main>
+  <!-- Home Page -->
+  <section class="home-page" id="home-page">
+    <!-- Banner images container -->
+    <div class="banner-image">
+            <div class="slider">
+                <img src="img/banner-image-1.jpg" alt="Banner Image 1" class="slide">
+                <img src="img/banner-image-2.jpg" alt="Banner Image 2" class="slide">
+                <img src="img/banner-image-3.jpg" alt="Banner Image 3" class="slide">
+            </div>
+        </div>
+        <div class="welcome-text">
+            <h1> <span class= "hi-user">Hi <span id="user-greeting">User</span>!</span>  <br>
+                <span class="welcome-message">Welcome to our website</span></h1>
+            <p>Lorem ipsum dolor sit amet</p>
+        </div>
+    </div>
 
-        <!--Main Content-->
-        <main>
-            <!--Home Page-->
-            <section>
-                <header>
-                    <h1>Hi <span id="user-greeting">User</span>, Welcome to our website</h1>
-                    <p>Lorem ipsum dolor sit amet</p>
-                </header>
-                
-                <div class="banner-image">
-            </section>
+    <div class="wave-container">
+        <!-- 1 SVG Wave -->
+        <svg viewBox="0 0 1440 320">
+            <path fill="#f8edd9" fill-opacity="1" d="M0,224L48,202.7C96,181,192,139,288,122.7C384,107,480,117,576,133.3C672,149,768,171,864,192C960,213,1056,235,1152,213.3C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
 
-            <!--Our Profile-->
-            <section>
-                <header id="our-profile">
-                    <h1>Our Profile</h1>
-                </header>
+    <div class="wave-container">
+        <!-- 2 SVG Wave (scaled down and different color) -->
+        <svg viewBox="0 0 1440 300">
+            <path fill="#013d5a" fill-opacity="0.8" d="M0,192L48,181.3C96,171,192,149,288,141.3C384,133,480,139,576,133.3C672,128,768,107,864,117.3C960,128,1056,181,1152,197.3C1248,213,1344,171,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+    
+    <div class="wave-container">
+        <!-- 3 SVG Wave (scaled down and different color) -->
+        <svg viewBox="0 0 1440 280">
+            <path fill="#bdd3ce" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,158.7C384,136,480,113,576,117.3C672,121,768,144,864,170.7C960,197,1056,213,1152,213.3C1248,213,1344,197,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+    
+    
+    
+</section>
 
-                <div class="content"></div>
-                
-            </section>
 
-            <!--Portofolio-->
-            <section>
-                <header id="portofolio">
-                    <h1>Portofolio</h1>
-                </header>
 
-                <div class="content"></div>
-            </section>
 
-            <!--Message Us-->
-            <section>
-                <header id="message-us">
-                    <h1>Message Us</h1>
-                </header>
+    <!--Our Profile-->
+    <section class="our-profile" id="our-profile">
+        <header id="our-profile-header">
+            <h1>Our Profile</h1>
+        </header>
 
-                <div class="content"></div>
-            </section>
-        </main>
+        <div class="content">
+            <p>We are a software development company specialized in building innovative solutions.</p>
+        </div>
+    </section>
+
+    <!--Portfolio-->
+    <section class="portofolio" id="portofolio">
+        <header id="portofolio-header">
+            <h1>Portofolio</h1>
+        </header>
+
+        <div class="content">
+            <ul>
+                <li>Project 1: Web Application</li>
+                <li>Project 2: Mobile Application</li>
+                <li>Project 3: AI Solution</li>
+            </ul>
+        </div>
+    </section>
+
+    <!--Message Us-->
+    <section class="message-us" id="message-us">
+        <header id="message-us-header">
+            <h1>Message Us</h1>
+        </header>
+
+        <div class="content">
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+</main>
+
 
         <hr/>
         <!--Footer-->
         <footer>
             <p>&copy; 2025 - All rights reserved</p>
         </footer>
+        <script>
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    const slider = document.querySelector('.slider');
+    const offset = -index * 100; // Menggeser slider 100% per gambar
+    slider.style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides; // Loop ke slide pertama setelah slide terakhir
+    showSlide(currentIndex);
+}
+
+setInterval(nextSlide, 3000); // Ganti slide setiap 3 detik
+</script>
+
     </body>
 </html>
