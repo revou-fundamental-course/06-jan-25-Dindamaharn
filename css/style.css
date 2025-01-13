@@ -127,59 +127,83 @@ nav a:hover {
     flex-shrink: 0;
 }
 
-/* Center the text block */
-.welcome-text {
-    position: absolute;
-    top: 50%; 
+.welcome-box {
+    position: absolute; 
+    top: 50%;
     left: 50%; 
     transform: translate(-50%, -50%); 
-    z-index: 2; 
-    text-align: center;
+    background-color: rgba(248, 237, 217, 0.9); 
+    color: #013d5a; 
+    padding: 15px; 
+    text-align: center; 
+    z-index: 10; 
+    width: 60%;
+    max-width: 800px; 
+    box-sizing: border-box; 
+    border-radius: 10px; 
+    animation: slideUp 1s ease-out forwards; 
 }
 
-/* Styling for "Hi User" */
-.hi-user {
-    font-size: 2.5rem; /* Slightly larger for emphasis */
-    color: #f3a29b; /* Softer, warmer color */
-    background-color: rgba(255, 223, 186, 0.9); /* Subtle background */
-    padding: 15px 30px; /* Bigger padding for more spacious feel */
-    border: 2px solid #f4a258; /* Border for a defined box */
-    border-radius: 12px; /* Smooth rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    font-weight: 600; /* Slightly bolder text */
-    letter-spacing: 1px; /* Increase letter spacing for readability */
-    transition: all 0.3s ease; /* Smooth transition on hover */
+/* Keyframes for the animation slide up */
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 100%); 
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
 }
 
-/* Hover effect for "Hi User" */
-.hi-user:hover {
-    background-color: #f4a258; /* Change background color on hover */
-    color: #fff; /* White text color on hover */
-    transform: translateY(-5px); /* Slight upward movement */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+.dots-container {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
 }
 
-/* Styling for "Welcome to our website" */
-.welcome-message {
-    font-size: 2.25rem; /* Same size as "Hi User" */
-    color: #013d5a; /* Darker blue for readability */
-    background-color: rgba(173, 216, 230, 0.8); /* Subtle light blue background */
-    padding: 12px 25px; /* Adjusted padding for symmetry */
-    border: 2px solid #90b7c8; /* Soft border color */
-    border-radius: 12px; /* Smooth rounded corners */
-    margin-top: 15px; /* Space between the two elements */
-    display: inline-block;
-    font-weight: 500; /* Medium weight text */
-    letter-spacing: 0.8px; /* Slightly increased letter spacing */
-    transition: all 0.3s ease; /* Smooth transition on hover */
+.dot {
+    width: 10px; 
+    height: 10px;
+    border-radius: 50%; 
+    margin: 4px ; 
 }
 
-/* Hover effect for "Welcome" */
-.welcome-message:hover {
-    background-color: #90b7c8; /* Light blue hover effect */
-    color: #fff; /* White text on hover */
-    transform: translateY(-5px); /* Slight upward movement */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
+.blue {
+    background-color: #013d5a; 
+}
+
+.green {
+    background-color: #708c69; 
+}
+
+.yellow {
+    background-color: #f6a258; 
+}
+
+.hi-user, .welcome-message {
+    font-size: 1.8em; 
+}
+
+.intro-text {
+    font-size: 1em; 
+    line-height: 1.4; 
+}
+
+.soft-text {
+    color: #f4a258; 
+}
+
+hr {
+    border: 0; 
+    height: 2px; 
+    background-color: #013d5a;
+    margin: 20px 0; 
+    width: 100; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 /* Wave container styling */

@@ -48,8 +48,8 @@
 
     <!--Main Content-->
     <main>
-  <!-- Home Page -->
-  <section class="home-page" id="home-page">
+    <!-- Home Page -->
+    <section class="home-page" id="home-page">
     <!-- Banner images container -->
     <div class="banner-image">
             <div class="slider">
@@ -58,40 +58,43 @@
                 <img src="img/banner-image-3.jpg" alt="Banner Image 3" class="slide">
             </div>
         </div>
-        <div class="welcome-text">
-            <h1> <span class= "hi-user">Hi <span id="user-greeting">User</span>!</span>  <br>
-                <span class="welcome-message">Welcome to our website</span></h1>
-            <p>Lorem ipsum dolor sit amet</p>
+        <div class="welcome-box">
+            <div class="dots-container">
+                <span class="dot blue"></span>
+                <span class="dot green"></span>
+                <span class="dot yellow"></span>
+            </div>
+            <h1> 
+                <span class="hi-user">Hi <span id="user-greeting">User</span>!</span>  
+                <br>
+                <span class="welcome-message">Welcome to <span class="soft-text">Soft</span>Wave</span>
+            </h1>
+            <hr>
+            <p class="intro-text">Your trusted partner in digital innovation! We are a software development company committed to creating cutting-edge solutions that help your business thrive in the digital age. With a team of experienced professionals, we deliver tailor-made products to meet your unique needs. Explore our services and discover how we can elevate your business to the next level!</p>
         </div>
     </div>
 
     <div class="wave-container">
         <!-- 1 SVG Wave -->
-        <svg viewBox="0 0 1440 320">
+        <svg viewBox="0 0 1440 310">
             <path fill="#f8edd9" fill-opacity="1" d="M0,224L48,202.7C96,181,192,139,288,122.7C384,107,480,117,576,133.3C672,149,768,171,864,192C960,213,1056,235,1152,213.3C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
     </div>
 
     <div class="wave-container">
         <!-- 2 SVG Wave (scaled down and different color) -->
-        <svg viewBox="0 0 1440 300">
+        <svg viewBox="0 0 1440 290">
             <path fill="#013d5a" fill-opacity="0.8" d="M0,192L48,181.3C96,171,192,149,288,141.3C384,133,480,139,576,133.3C672,128,768,107,864,117.3C960,128,1056,181,1152,197.3C1248,213,1344,171,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
     </div>
     
     <div class="wave-container">
         <!-- 3 SVG Wave (scaled down and different color) -->
-        <svg viewBox="0 0 1440 280">
+        <svg viewBox="0 0 1440 270">
             <path fill="#bdd3ce" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,158.7C384,136,480,113,576,117.3C672,121,768,144,864,170.7C960,197,1056,213,1152,213.3C1248,213,1344,197,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
     </div>
-    
-    
-    
-</section>
-
-
-
+    </section>
 
     <!--Our Profile-->
     <section class="our-profile" id="our-profile">
@@ -143,24 +146,8 @@
         <footer>
             <p>&copy; 2025 - All rights reserved</p>
         </footer>
-        <script>
-let currentIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-
-function showSlide(index) {
-    const slider = document.querySelector('.slider');
-    const offset = -index * 100; // Menggeser slider 100% per gambar
-    slider.style.transform = `translateX(${offset}%)`;
-}
-
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides; // Loop ke slide pertama setelah slide terakhir
-    showSlide(currentIndex);
-}
-
-setInterval(nextSlide, 3000); // Ganti slide setiap 3 detik
-</script>
-
+        
+        <!--Scripts-->
+        <script src="js/script.js"></script>
     </body>
 </html>
