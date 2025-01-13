@@ -241,3 +241,24 @@ hr {
 footer{
     text-align: center;
 }
+
+/* Style untuk layar lebih besar dari 768px (tablet ke atas) */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Atur tata letak kolom jika layar cukup besar */
+    }
+}
+
+/* Style untuk layar lebih kecil dari 768px (mobile) */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column; /* Atur tata letak vertikal pada layar kecil */
+    }
+}
+
+/* Style untuk layar lebih kecil dari 480px (mobile lebih kecil) */
+@media (max-width: 480px) {
+    .item {
+        font-size: 14px; /* Mengubah ukuran font pada layar kecil */
+    }
+}
