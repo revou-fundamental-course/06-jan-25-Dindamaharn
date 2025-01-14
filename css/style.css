@@ -221,68 +221,97 @@ hr {
     transform: scale(1.1); 
 }
 
+/* Animasi untuk keluar dari kiri ke kanan */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animasi untuk keluar dari kanan ke kiri */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animasi untuk keluar dari kiri ke kanan */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animasi untuk keluar dari kanan ke kiri */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Our Profile Styling */
 .our-profile {
-    background-color: #bdd3ce;
+    background: linear-gradient(to bottom, #bdd3ce, #013d5a);
     padding: 60px 30px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
 }
 
+/* Konten di dalam Our Profile yang diberi animasi */
 .our-profile .content {
-    padding: 0;
-    background-color: transparent;
-    width: 100%;
-    color: #013d5a;
-    box-shadow: none;
+    animation: slideInFromLeft 1s ease-out forwards; /* Menjaga konten tetap terlihat setelah animasi selesai */
+    opacity: 1; /* Pastikan konten tetap terlihat */
 }
 
 #our-profile-header h1 {
     font-size: 2.8em;
     color: #013d5a;
-    margin-bottom: 0px; 
-    margin-top: 0; 
+    margin-bottom: 0px;
+    margin-top: 0;
     text-shadow: 2px 2px 5px rgba(1, 61, 90, 0.8);
     transition: transform 0.3s ease-in-out;
+    animation: slideInFromLeft 1s ease-out forwards; /* Animasi masuk dari kiri */
+    opacity: 1;
 }
 
 #our-profile-header h1:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #dd5c36;
-    color: #fff;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px; 
-    margin-bottom: 30px; 
-    transition: background-color 0.3s ease;
-}
 
-#arrow {
-    transition: transform 0.3s ease; 
-}
-
-.rotated {
-    transform: rotate(180deg); 
-}
-
-button:hover {
-    background-color: #f4a258;
-}
-
+/* Mission and Vision */
 .additional-info {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    margin-top: 20px; 
+    margin-top: 20px;
     text-align: left;
-    display: none;
+    flex-wrap: wrap;
+    animation: slideInFromLeft 1s ease-out forwards; /* Animasi masuk dari kiri */
+    opacity: 1;
 }
 
+/* Box Styling */
 .box {
     padding: 20px;
     background-color: #f8edd9;
@@ -290,8 +319,11 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    width: 48%;
+    width: 46%;
     position: relative;
+    text-align: justify;
+    animation: slideInFromRight 1s ease-out forwards; /* Animasi masuk dari kanan */
+    opacity: 1; /* Pastikan kotak tetap terlihat */
 }
 
 .box h2 {
@@ -300,72 +332,93 @@ button:hover {
     margin-bottom: 15px;
 }
 
-.hidden-content {
-    display: none;
-    font-size: 1.25em;
-    color: #013d5a;
-    line-height: 1.8;
-    margin-top: 5px;
-    text-align: justify;
-}
-
-.visible-content {
-    display: block;
-    font-size: 1.25em;
-    color: #013d5a;
-    line-height: 1.8;
-    margin-top: 5px;
-    text-align: justify;
-}
-
 .box:hover {
     background-color: rgba(244, 162, 88, 0.7);
     transition: background-color 0.3s ease;
 }
 
+/* Roadmap Section */
+.roadmap h2 {
+    font-size: 2.8em;
+    color: #013d5a;
+    margin: 10px;
+    text-shadow: 2px 2px 5px rgba(192, 212, 223, 0.8);
+    transition: transform 0.3s ease-in-out; /* Pastikan ada transisi transform */
+    animation: slideInFromRight 1s ease-out forwards; /* Animasi masuk dari kanan */
+    opacity: 1;
+}
 
+/* Hover Effect */
+.roadmap h2:hover {
+    transform: scale(1.05); /* Memperbesar elemen saat hover */
+    transition: transform 0.3s ease-in-out; /* Pastikan ada transisi pada hover */
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Roadmap Item */
+.roadmap-item {
+    background-color: #f8edd9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: block;
+    min-width: 200px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    animation: slideInFromRight 1s ease-out forwards; /* Animasi masuk dari kanan */
+    opacity: 1; /* Pastikan item roadmap tetap terlihat */
+}
+
+.roadmap-item:hover {
+    transform: translateY(-20px); /* Memperbesar pergeseran vertikal */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi untuk efek yang lebih halus */
+}
+
+.roadmap-item .roadmap-year {
+    font-size: 24px;
+    color: #dd5c36;
+    text-shadow:  rgba(221, 92, 54, 0.7);;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.roadmap-item p {
+    font-size: 16px;
+    color: #013d5a;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 0;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+/* portofolio styling */
 .portfolio .content {
     padding: 25px;
     background-color: #333;
     color: #fff;
 }
 
+/* message-us styling */
 .message-us .content {
     padding: 20px;
     background-color: #f1f1f1;
 }
 
+/* footer styling */
 footer{
     text-align: center;
-}
-
-/* Style untuk layar lebih besar dari 768px (tablet ke atas) */
-@media (min-width: 768px) {
-    .container {
-        flex-direction: row; /* Atur tata letak kolom jika layar cukup besar */
-    }
-}
-
-/* Style untuk layar lebih kecil dari 768px (mobile) */
-@media (max-width: 767px) {
-    .container {
-        flex-direction: column; /* Atur tata letak vertikal pada layar kecil */
-    }
-}
-
-/* Style untuk layar lebih kecil dari 480px (mobile lebih kecil) */
-@media (max-width: 480px) {
-    .item {
-        font-size: 14px; /* Mengubah ukuran font pada layar kecil */
-    }
-}
-@media (max-width: 768px) {
-    .additional-info {
-        flex-direction: column; /* Mengubah tata letak menjadi kolom pada layar kecil */
-        gap: 10px; /* Menurunkan jarak antar box */
-    }
-
-    .box {
-        width: 100%; /* Memastikan box mengisi 100% lebar layar */
-    }
 }

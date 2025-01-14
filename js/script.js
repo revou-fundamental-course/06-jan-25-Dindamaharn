@@ -17,7 +17,7 @@ function nextSlide() {
 setInterval(nextSlide, 3000); 
 
 //Toggle untuk our profile
-function toggleContent() {
+function toggleMissionVision() {
     const additionalInfo = document.querySelector('.additional-info');
     const hiddenContents = document.querySelectorAll('.hidden-content');
     
@@ -29,4 +29,20 @@ function toggleContent() {
 
     var arrow = document.getElementById('arrow');
     arrow.classList.toggle('rotated');
+}
+
+//Toglle untuk roadmap
+function toggleRoadmap() {
+    const roadmapSection = document.getElementById("roadmap-section");
+    const arrowRoadmap = document.getElementById("arrow-roadmap");
+
+    if (roadmapSection.style.display === "none") {
+        roadmapSection.style.display = "block";
+        arrowRoadmap.classList.remove("fa-chevron-down");
+        arrowRoadmap.classList.add("fa-chevron-up");
+    } else {
+        roadmapSection.style.display = "none";
+        arrowRoadmap.classList.remove("fa-chevron-up");
+        arrowRoadmap.classList.add("fa-chevron-down");
+    }
 }
