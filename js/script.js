@@ -16,4 +16,17 @@ function nextSlide() {
 
 setInterval(nextSlide, 3000); 
 
+//Toggle untuk our profile
+function toggleContent() {
+    const additionalInfo = document.querySelector('.additional-info');
+    const hiddenContents = document.querySelectorAll('.hidden-content');
+    
+    additionalInfo.style.display = additionalInfo.style.display === 'flex' ? 'none' : 'flex';
+    
+    hiddenContents.forEach(content => {
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
 
+    var arrow = document.getElementById('arrow');
+    arrow.classList.toggle('rotated');
+}
