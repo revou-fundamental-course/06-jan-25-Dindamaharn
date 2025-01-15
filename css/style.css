@@ -298,7 +298,6 @@ hr {
     transform: scale(1.05);
 }
 
-
 /* Mission and Vision */
 .additional-info {
     display: flex;
@@ -307,8 +306,7 @@ hr {
     margin-top: 20px;
     text-align: left;
     flex-wrap: wrap;
-    animation: slideInFromLeft 1s ease-out forwards; /* Animasi masuk dari kiri */
-    opacity: 1;
+    overflow: visible; /* Pastikan overflow kontainer tidak memotong elemen yang diperbesar */
 }
 
 /* Box Styling */
@@ -322,19 +320,27 @@ hr {
     width: 46%;
     position: relative;
     text-align: justify;
-    animation: slideInFromRight 1s ease-out forwards; /* Animasi masuk dari kanan */
-    opacity: 1; /* Pastikan kotak tetap terlihat */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    opacity: 1;
 }
 
+/* Heading inside box */
 .box h2 {
     font-size: 2em;
     color: #dd5c36;
     margin-bottom: 15px;
 }
 
+.box p {
+    color: #013d5a; /* Ganti dengan warna teks yang diinginkan */
+}
+/* Hover effects */
 .box:hover {
-    background-color: rgba(244, 162, 88, 0.7);
-    transition: background-color 0.3s ease;
+    background-color: rgba(244, 162, 88, 0.7); /* Change background color */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow for a lifted effect */
+    transform: scale(1.05); /* Adjust the scale for a more moderate zoom effect */
+    z-index: 10; /* Increase z-index to ensure box is in front of other elements */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Roadmap Section */
@@ -343,15 +349,14 @@ hr {
     color: #013d5a;
     margin: 10px;
     text-shadow: 2px 2px 5px rgba(192, 212, 223, 0.8);
-    transition: transform 0.3s ease-in-out; /* Pastikan ada transisi transform */
     animation: slideInFromRight 1s ease-out forwards; /* Animasi masuk dari kanan */
     opacity: 1;
+    transition: transform 0.3s ease-in-out/* Menambahkan transisi */
 }
 
-/* Hover Effect */
+/* Hover effect */
 .roadmap h2:hover {
-    transform: scale(1.05); /* Memperbesar elemen saat hover */
-    transition: transform 0.3s ease-in-out; /* Pastikan ada transisi pada hover */
+    transform: scale(1.1); /* Membuat teks lebih besar saat dihover */
 }
 
 .roadmap-grid {
@@ -359,7 +364,7 @@ hr {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     width: 100%;
-    overflow-x: auto;
+    overflow: visible; /* Mengizinkan elemen untuk berkembang di luar grid */
     padding: 20px;
     box-sizing: border-box;
 }
@@ -374,27 +379,30 @@ hr {
     display: block;
     min-width: 200px;
     box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     position: relative;
-    animation: slideInFromRight 1s ease-out forwards; /* Animasi masuk dari kanan */
-    opacity: 1; /* Pastikan item roadmap tetap terlihat */
+    opacity: 1;
+    z-index: 0; /* Agar elemen hover muncul di atas */
 }
 
 .roadmap-item:hover {
-    transform: translateY(-20px); /* Memperbesar pergeseran vertikal */
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi untuk efek yang lebih halus */
+    transform: scale(1.1); /* Memperbesar seluruh box beserta isinya sebesar 20% */
+    background-color: rgba(244, 162, 88, 0.7); /* Warna background berubah */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek hover */
+    z-index: 1; /* Memastikan elemen hover tetap di atas yang lain */
 }
 
+/* Roadmap Year */
 .roadmap-item .roadmap-year {
     font-size: 24px;
     color: #dd5c36;
-    text-shadow:  rgba(221, 92, 54, 0.7);;
+    text-shadow: 0 2px 4px rgba(221, 92, 54, 0.7); /* Penambahan shadow untuk teks */
     font-weight: bold;
     margin-bottom: 15px;
     display: block;
 }
 
+/* Roadmap Item Text */
 .roadmap-item p {
     font-size: 16px;
     color: #013d5a;
@@ -406,10 +414,107 @@ hr {
 }
 
 /* portofolio styling */
-.portfolio .content {
-    padding: 25px;
-    background-color: #333;
+.portofolio {
+    background-color:#013d5a;
+    padding: 40px 20px;
+}
+
+#portofolio-header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#portofolio-header p {
+    font-size: 1.2em;
+    color: #777;
+}
+
+/* Project List */
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content li {
+    background-color: #f8edd9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content li:hover {
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.content a {
+    color: #dd5c36;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* Skills Section */
+.skills {
+    margin-top: 40px;
+}
+
+.skills ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.skills li {
+    background-color: #f8edd9;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skills li:hover {
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonials Section */
+.testimonials {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.testimonials p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Contact Section */
+.contact {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact a {
+    background-color: #dd5c36;
     color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact a:hover {
+    background-color: #013d5a;
 }
 
 /* message-us styling */
